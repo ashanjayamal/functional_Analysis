@@ -1,0 +1,179 @@
+--- 
+title: "Functinal Analaysis"
+author: "Ashan De Silva"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+#bibliography: [book.bib, packages.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a i
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Banach space
+
+## Lebesgue spaces
+
+```{definition}
+markdown
+Let \(X\) be a set. A **\(\sigma\)-algebra** \(\mathcal{I}\) on \(X\) is a collection of subsets of \(X\) such that:
+
+1. \(\emptyset \in \mathcal{I}\),
+2. if \(E \in \mathcal{I}\), then \(X \setminus E \in \mathcal{I}\),
+3. if \(E_n \in \mathcal{I}\) for every \(n \ge 1\), then  
+\[
+       \bigcup_{n=1}^{\infty} E_n \in \mathcal{I}.
+   \]
+```
+
+- Elements of $\mathcal{I}$ are called $\mathcal{I}$-measurable sets,
+- $(X,\mathcal{I})$ is a measurable space.
+
+```{definition}
+A function \( f : X \to \mathbb{C} \) is said to be measurable if \[
+f^{-1}\bigl(\{\, z \in \mathbb{C} : |z - a| < \delta \,\}\bigr) \in \mathcal{T}\] for every  $\delta > 0$ and $a \in \mathbb{C}$.
+```
+
+```{definition}
+A (positive) measure is a function
+
+
+\[
+\mu : \mathcal{T} \to [0,\infty]
+\]
+
+
+which is countably additive, in the sense that if \(\{E_n\}_{n=1}^\infty\) is a countable collection of
+disjoint measurable sets, then
+
+
+\[
+\mu\!\left( \bigcup_{n=1}^{\infty} E_n \right)
+= \sum_{n=1}^{\infty} \mu(E_n).
+\]
+
+```
+
+- The triple \((X, \mathcal{T}, \mu)\) is called a \emph{measure space}.
+
+**Notation** :
+
+- Let $0 < p < \infty$,
+\[L^p(X,\mathcal{I},\mu):=\left\{f:X\rightarrow \mathcal{C}:f \text{ is measurable and }\int_X |f|^p d\mu<\infty\right\}\] 
+  - Such functions are said to be **$p$-integrable**.
+  -  $L^p$ norm of $f$ \(= ||f||_p=\left(\int_X|f|\, d\mu\right)^\frac{1}{p}\)
+- $p=\infty$
+
+
+\[
+L^{\infty}(X,\mathcal{T},\mu)
+= \left\{
+    f : X \to \mathbb{C} \;:\;
+    \exists\, M > 0 \text{ such that } |f| < M \ \text{[\(\mu\)]-a.e. on } X
+  \right\}.
+\]
+
+
+
+  - Such functions are said to be **essentially bounded**. 
+  - The essential norm \(=\) \(L^{\infty}\) norm of \(f=
+\|f\|_{\infty}
+= \inf \left\{ M > 0 : |f| < M \ \text{[\(\mu\)]-a.e. on } X \right\}.
+\)
+![](fig/fig (4).png)
+In this section we use the term **“norm.”** Strictly speaking, we have not yet verified that the expressions introduced actually satisfy the axioms of a norm. That verification will come later. For now, we use the word “norm” informally, with the understanding that its legitimacy will be established in due course.
+
+```{lemma}
+Let \((X,\mathcal{T},\mu)\) be a measure space, let \(0 < p < \infty\), and let
+\(f \in L^{p}(X,\mathcal{T},\mu)\).
+Then
+
+
+\[
+\|f\|_{p} = 0
+\quad \iff \quad
+f(x) = 0 \ \text{for [\(\mu\)]-a.e. } x \in X.
+\]
+```
+
+```{proof}
+![](fig/fig (2).png)
+![](fig/fig (3).png)
+```
+
+**Fact**: \(\lambda \in \mathbb{C}, f\in L^p(X,I,\mu), 0<p\geq\infty,||\lambda f||_p=|\lambda| ||f||_p\).
+
+```{proof}
+![](fig/fig (5).png)
+```
+
+
+```{lemma}
+Let \((X,\mathcal{T},\mu)\) be a measure space and let
+\(f \in L^{\infty}(X,\mathcal{T},\mu)\).
+Then, for 
+\[
+|f(x)| \le \|f\|_{\infty} [\mu]-\text{a.e.} x \in X.
+\]
+
+```
+
+![](fig/fig (1).png)
+
+**Result** : If $f,g\in L^P(X,I,\mu)$ then $f+g\in L^P(X,I,\mu)$
+
+|$1\leq p <\infty$|$p=\infty$|
+|:-:|:-:|
+|![](fig/fig (7).png)|![](fig/fig (6).png)|
+
+```{lemma,name="Young's inequality"}
+Let \(a,b \ge 0\) and \(1 < p < \infty\). Let \(q\) be the conjugate exponent, i.e.
+
+
+\(\frac{1}{p} + \frac{1}{q} = 1.\)
+
+
+Then
+
+
+\[
+ab \le \frac{a^{p}}{p} + \frac{b^{q}}{q}.
+\]
+
+
+```
+
+![](fig/fig (8).png)
+![](fig/fig (9).png)
+
+```{theorem,name="Holder's inequality"}
+Fix \(1 \le p < \infty\) and let \(q\) be the conjugate exponent, i.e.
+
+
+\(\frac{1}{p} + \frac{1}{q} = 1.\)
+
+
+Let \(f,g : X \to \mathbb{C}\) be measurable functions. Then
+
+
+\[
+\int_X |f g| \, d\mu
+\;\le\;
+\left( \int_X |f|^{p} \, d\mu \right)^{1/p}
+\left( \int_X |g|^{q} \, d\mu \right)^{1/q}=||f||_p ||f||_q.
+\]
+
+
+```
+
+```{proof}
+![](fig/fig (10).png)
+![](fig/fig (11).png)
+```
+
+```{remark}
+If $p=2$ then $q=2$ then Holder ineqaulty becomes  Cauchy -Schawrz inequlity.
+```
