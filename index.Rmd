@@ -16,6 +16,7 @@ github-repo: rstudio/bookdown-demo
 # Banach space
 
 ## Lebesgue spaces
+### a
 
 ```{definition}
 markdown
@@ -62,14 +63,14 @@ disjoint measurable sets, then
 **Notation** :
 
 - Let $0 < p < \infty$,
-\[L^p(X,\mathcal{I},\mu):=\left\{f:X\rightarrow \mathcal{C}:f \text{ is measurable and }\int_X |f|^p d\mu<\infty\right\}\] 
+\[\mathcal{L}^p(X,\mathcal{I},\mu):=\left\{f:X\rightarrow \mathcal{C}:f \text{ is measurable and }\int_X |f|^p d\mu<\infty\right\}\] 
   - Such functions are said to be **$p$-integrable**.
-  -  $L^p$ norm of $f$ \(= ||f||_p=\left(\int_X|f|\, d\mu\right)^\frac{1}{p}\)
+  -  $\mathcal{L}^p$ norm of $f$ \(= ||f||_p=\left(\int_X|f|^p\, d\mu\right)^\frac{1}{p}\)
 - $p=\infty$
 
 
 \[
-L^{\infty}(X,\mathcal{T},\mu)
+\mathcal{L}^{\infty}(X,\mathcal{T},\mu)
 = \left\{
     f : X \to \mathbb{C} \;:\;
     \exists\, M > 0 \text{ such that } |f| < M \ \text{[\(\mu\)]-a.e. on } X
@@ -79,16 +80,16 @@ L^{\infty}(X,\mathcal{T},\mu)
 
 
   - Such functions are said to be **essentially bounded**. 
-  - The essential norm \(=\) \(L^{\infty}\) norm of \(f=
+  - The essential norm \(=\) \(\mathcal{L}^{\infty}\) norm of \(f=
 \|f\|_{\infty}
 = \inf \left\{ M > 0 : |f| < M \ \text{[\(\mu\)]-a.e. on } X \right\}.
 \)
 ![](fig/fig (4).png)
 In this section we use the term **“norm.”** Strictly speaking, we have not yet verified that the expressions introduced actually satisfy the axioms of a norm. That verification will come later. For now, we use the word “norm” informally, with the understanding that its legitimacy will be established in due course.
 
-```{lemma}
+```{lemma,lemma1.1.1}
 Let \((X,\mathcal{T},\mu)\) be a measure space, let \(0 < p < \infty\), and let
-\(f \in L^{p}(X,\mathcal{T},\mu)\).
+\(f \in \mathcal{L}^{p}(X,\mathcal{T},\mu)\).
 Then
 
 
@@ -104,7 +105,7 @@ f(x) = 0 \ \text{for [\(\mu\)]-a.e. } x \in X.
 ![](fig/fig (3).png)
 ```
 
-**Fact**: \(\lambda \in \mathbb{C}, f\in L^p(X,I,\mu), 0<p\geq\infty,||\lambda f||_p=|\lambda| ||f||_p\).
+**Fact**: \(\lambda \in \mathbb{C}, f\in \mathcal{L}^p(X,I,\mu), 0<p\geq\infty,||\lambda f||_p=|\lambda| ||f||_p\).
 
 ```{proof}
 ![](fig/fig (5).png)
@@ -113,7 +114,7 @@ f(x) = 0 \ \text{for [\(\mu\)]-a.e. } x \in X.
 
 ```{lemma}
 Let \((X,\mathcal{T},\mu)\) be a measure space and let
-\(f \in L^{\infty}(X,\mathcal{T},\mu)\).
+\(f \in \mathcal{L}^{\infty}(X,\mathcal{T},\mu)\).
 Then, for 
 \[
 |f(x)| \le \|f\|_{\infty} [\mu]-\text{a.e.} x \in X.
@@ -123,7 +124,7 @@ Then, for
 
 ![](fig/fig (1).png)
 
-**Result** : If $f,g\in L^P(X,I,\mu)$ then $f+g\in L^P(X,I,\mu)$
+**Result** : If $f,g\in \mathcal{L}^P(X,I,\mu)$ then $f+g\in \mathcal{L}^P(X,I,\mu)$
 
 |$1\leq p <\infty$|$p=\infty$|
 |:-:|:-:|
@@ -177,3 +178,154 @@ Let \(f,g : X \to \mathbb{C}\) be measurable functions. Then
 ```{remark}
 If $p=2$ then $q=2$ then Holder ineqaulty becomes  Cauchy -Schawrz inequlity.
 ```
+
+
+```{theorem,mink,name="Minkowski's Inequality"}
+Fix $1 \le p \le \infty$. Let $f,g : X \to \mathbb{C}$ be measurable functions. Then
+\[
+\|f + g\|_{p} \le \|f\|_{p} + \|g\|_{p}.
+\]
+```
+
+```{proof}
+![](fig/mikwoski-1.png)
+![](fig/mikwoski-2.png)
+![](fig/mikwoski-3.png)
+![](fig/mikwoski-4.png)
+```
+
+Next, we consider the following question: 
+
+**Question** : For which measurable functions \(f : X \to \mathbb{C}\) do we have \(\|f\|_{p} = 0\)?
+
+**Answer**: By lemma \@ref(lemm:lemma1.1.1) $||f||_p=0 \iff f=0 ~[\mu] -$ a.e. Precisely those functions such that \(f(x) = 0\) for \(\mu\)-almost every \(x \in X\).
+
+In particular, there are some functions \(f\) which are not identically zero but have zero \(\mathcal{L}^{p}\)-norm. This is unfortunate, so we typically consider the following quotient space:
+
+We define
+
+
+\[
+{L}^{p}(X,\mathcal{T},\mu)
+    = \frac{\mathcal{L}^{p}(X,\mathcal{T},\mu)}{N_{p}},
+\]
+
+
+where
+
+
+\[
+N_{p}
+    = \{\, f \in \mathcal{L}^{p}(X,\mathcal{T},\mu) : \|f\|_{p} = 0 \,\}.
+\]
+
+
+
+We have seen that for any $\lambda \in \mathbb{C}$ and any 
+$f, g \in \mathcal{L}^{p}(X,\mathcal{T},\mu)$, we always have
+
+
+\begin{align*}
+\|\lambda f\|_{p} &= |\lambda|\,\|f\|_{p},\\
+\|f + g\|_{p} &\le \|f\|_{p} + \|g\|_{p}.\\
+& \uparrow\\
+&\text{ By Mink}\\
+\end{align*}
+
+**Claim**: $\mathcal{L}^p$ is vector space over $\mathbb{C}$.
+
+```{proof}
+1. Zero function
+
+Let \(0(x) := 0\) for all \(x\). Then \(|0|^p = 0\) and \(
+\int_X |0|^p\,d\mu = 0 < \infty,
+\) so \(0 \in \mathcal{L}^p\).
+
+2. Closed under scalar multiplication
+
+Let \(f \in \mathcal{L}^p\) and \(\lambda \in \mathbb{C}\). Then
+\[
+|\lambda f|^p = |\lambda|^p |f|^p,
+\]
+so
+\[
+\int_X |\lambda f|^p\,d\mu
+= |\lambda|^p \int_X |f|^p\,d\mu < \infty.
+\]
+Thus \(\lambda f \in \mathcal{L}^p\).
+
+3. Closed under addition
+
+Let \(f,g \in \mathcal{L}^p\). Use the standard inequality for \(p \ge 1\):
+\[
+|f+g|^p \le 2^{p-1}\big(|f|^p + |g|^p\big).
+\]
+Integrate:
+\[
+\int_X |f+g|^p\,d\mu
+\le 2^{p-1} \left( \int_X |f|^p\,d\mu + \int_X |g|^p\,d\mu \right)
+< \infty,
+\]
+since both integrals on the right are finite. Hence \(f+g \in \mathcal{L}^p\).
+
+4. Vector space axioms
+
+The pointwise operations
+\[
+(f+g)(x) := f(x)+g(x), \quad (\lambda f)(x) := \lambda f(x)
+\]
+inherit associativity, commutativity, distributivity, etc., from \(\mathbb{C}\). Together with steps 1–3, this shows \(\mathcal{L}^p(X,\mathcal{T},\mu)\) is a vector space over \(\mathbb{C}\).
+
+Then
+\[
+L^{p}(X,\mathcal{T},\mu)
+= \frac{\mathcal{L}^{p}(X,\mathcal{T},\mu)}{N_{p}}
+\]
+is the quotient of this vector space by the subspace \(N_p\), so it is also a vector space.
+```
+
+**Claim**: $N^p$ is subspace of $\mathcal{L}^p$
+
+```{proof}
+Let $f,g\in N^p$ and $\lambda\in \mathbb{C}$,
+
+- $0_{map}\in N^p\implies N^p \neq \emptyset$
+- $\|\lambda f\|_{p} = |\lambda|\,\|f\|_{p}=0$
+- $\|f + g\|_{p} \le \|f\|_{p} + \|g\|_{p}=0 \implies \|f + g\|_{p}=0.$
+
+Thus, $N^p$ is a subspace of $\mathcal{L}^p$.
+```
+
+Thus, $L^p$ is subspace. Hence, $N_{p}$ is a subspace of $L^{p}(X,\mathcal{T},\mu)$; therefore 
+$L^{p}(X,\mathcal{T},\mu)$ is a vector space over $\mathbb{C}$.
+
+If for $f \in L^{p}(X,\mathcal{T},\mu)$ we denote by $[f]$ its image
+in the quotient space $L^{p}(X,\mathcal{T},\mu)$, then
+
+
+\[
+\lambda [f] + [g] = [\,\lambda f + g\,].
+\]
+
+
+Define 
+\[\|[f]\|_p=\|f\|_p\]
+More ever, \(\|[\cdot]\|_p\) well defined.
+
+```{proof}
+Let $f,g\in \mathcal{L}^p$
+By Minkowski's inequlirty we can get,
+
+\[
+\bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
+    \;\le\;
+    \|\,f - g\,\|_{p},
+    \qquad f,g \in L^{p}(X,\mathcal{T},\mu).
+\]
+
+Suppos that $[f]=[g]$.
+Then, $f-g\in N^p\implies f-g\in N^p$. Then $$
+
+
+```
+

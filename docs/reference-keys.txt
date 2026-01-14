@@ -27,3 +27,7 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
+thm:mink
+a
+lem:unnamed-chunk-6
+thm:unnamed-chunk-8
