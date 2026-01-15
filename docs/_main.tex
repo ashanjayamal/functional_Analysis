@@ -118,7 +118,7 @@
 
 \title{Functinal Analaysis}
 \author{Ashan De Silva}
-\date{2026-01-07}
+\date{2026-01-15}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -147,6 +147,8 @@
 \chapter{Banach space}\label{banach-space}
 
 \section{Lebesgue spaces}\label{lebesgue-spaces}
+
+\subsection{a}\label{a}
 
 \begin{definition}
 \protect\hypertarget{def:unnamed-chunk-1}{}\label{def:unnamed-chunk-1}
@@ -211,21 +213,21 @@ disjoint measurable sets, then
 \tightlist
 \item
   Let \(0 < p < \infty\),
-  \[L^p(X,\mathcal{I},\mu):=\left\{f:X\rightarrow \mathcal{C}:f \text{ is measurable and }\int_X |f|^p d\mu<\infty\right\}\]
+  \[\mathcal{L}^p(X,\mathcal{I},\mu):=\left\{f:X\rightarrow \mathcal{C}:f \text{ is measurable and }\int_X |f|^p d\mu<\infty\right\}\]
 
   \begin{itemize}
   \tightlist
   \item
     Such functions are said to be \textbf{\(p\)-integrable}.
   \item
-    \(L^p\) norm of \(f\) \(= ||f||_p=\left(\int_X|f|\, d\mu\right)^\frac{1}{p}\)
+    \(\mathcal{L}^p\) norm of \(f\) \(= ||f||_p=\left(\int_X|f|^p\, d\mu\right)^\frac{1}{p}\)
   \end{itemize}
 \item
   \(p=\infty\)
 \end{itemize}
 
 \[
-L^{\infty}(X,\mathcal{T},\mu)
+\mathcal{L}^{\infty}(X,\mathcal{T},\mu)
 = \left\{
     f : X \to \mathbb{C} \;:\;
     \exists\, M > 0 \text{ such that } |f| < M \ \text{[\(\mu\)]-a.e. on } X
@@ -237,7 +239,7 @@ L^{\infty}(X,\mathcal{T},\mu)
 \item
   Such functions are said to be \textbf{essentially bounded}.
 \item
-  The essential norm \(=\) \(L^{\infty}\) norm of \(f=
+  The essential norm \(=\) \(\mathcal{L}^{\infty}\) norm of \(f=
   \|f\|_{\infty}
   = \inf \left\{ M > 0 : |f| < M \ \text{[\(\mu\)]-a.e. on } X \right\}.\)
   \pandocbounded{\includegraphics[keepaspectratio]{fig/fig (4).png}}
@@ -245,8 +247,8 @@ L^{\infty}(X,\mathcal{T},\mu)
 \end{itemize}
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-4}{}\label{lem:unnamed-chunk-4}Let \((X,\mathcal{T},\mu)\) be a measure space, let \(0 < p < \infty\), and let
-\(f \in L^{p}(X,\mathcal{T},\mu)\).
+\protect\hypertarget{lem:lemma1.1.1}{}\label{lem:lemma1.1.1}Let \((X,\mathcal{T},\mu)\) be a measure space, let \(0 < p < \infty\), and let
+\(f \in \mathcal{L}^{p}(X,\mathcal{T},\mu)\).
 Then
 
 \[
@@ -261,15 +263,15 @@ f(x) = 0 \ \text{for [\(\mu\)]-a.e. } x \in X.
 \pandocbounded{\includegraphics[keepaspectratio]{fig/fig (3).png}}
 \end{proof}
 
-\textbf{Fact}: \(\lambda \in \mathbb{C}, f\in L^p(X,I,\mu), 0<p\geq\infty,||\lambda f||_p=|\lambda| ||f||_p\).
+\textbf{Fact}: \(\lambda \in \mathbb{C}, f\in \mathcal{L}^p(X,I,\mu), 0<p\geq\infty,||\lambda f||_p=|\lambda| ||f||_p\).
 
 \begin{proof}
 \pandocbounded{\includegraphics[keepaspectratio]{fig/fig (5).png}}
 \end{proof}
 
 \begin{lemma}
-\protect\hypertarget{lem:unnamed-chunk-7}{}\label{lem:unnamed-chunk-7}Let \((X,\mathcal{T},\mu)\) be a measure space and let
-\(f \in L^{\infty}(X,\mathcal{T},\mu)\).
+\protect\hypertarget{lem:unnamed-chunk-6}{}\label{lem:unnamed-chunk-6}Let \((X,\mathcal{T},\mu)\) be a measure space and let
+\(f \in \mathcal{L}^{\infty}(X,\mathcal{T},\mu)\).
 Then, for
 \[
 |f(x)| \le \|f\|_{\infty} [\mu]-\text{a.e.} x \in X.
@@ -278,7 +280,7 @@ Then, for
 
 \pandocbounded{\includegraphics[keepaspectratio]{fig/fig (1).png}}
 
-\textbf{Result} : If \(f,g\in L^P(X,I,\mu)\) then \(f+g\in L^P(X,I,\mu)\)
+\textbf{Result} : If \(f,g\in \mathcal{L}^P(X,I,\mu)\) then \(f+g\in \mathcal{L}^P(X,I,\mu)\)
 
 \begin{longtable}[]{@{}cc@{}}
 \toprule\noalign{}
@@ -291,7 +293,7 @@ Then, for
 \end{longtable}
 
 \begin{lemma}[Young's inequality]
-\protect\hypertarget{lem:unnamed-chunk-8}{}\label{lem:unnamed-chunk-8}Let \(a,b \ge 0\) and \(1 < p < \infty\). Let \(q\) be the conjugate exponent, i.e.
+\protect\hypertarget{lem:unnamed-chunk-7}{}\label{lem:unnamed-chunk-7}Let \(a,b \ge 0\) and \(1 < p < \infty\). Let \(q\) be the conjugate exponent, i.e.
 
 \(\frac{1}{p} + \frac{1}{q} = 1.\)
 
@@ -306,7 +308,7 @@ ab \le \frac{a^{p}}{p} + \frac{b^{q}}{q}.
 \pandocbounded{\includegraphics[keepaspectratio]{fig/fig (9).png}}
 
 \begin{theorem}[Holder's inequality]
-\protect\hypertarget{thm:unnamed-chunk-9}{}\label{thm:unnamed-chunk-9}Fix \(1 \le p < \infty\) and let \(q\) be the conjugate exponent, i.e.
+\protect\hypertarget{thm:unnamed-chunk-8}{}\label{thm:unnamed-chunk-8}Fix \(1 \le p < \infty\) and let \(q\) be the conjugate exponent, i.e.
 
 \(\frac{1}{p} + \frac{1}{q} = 1.\)
 
@@ -328,6 +330,341 @@ Let \(f,g : X \to \mathbb{C}\) be measurable functions. Then
 \begin{remark}
 If \(p=2\) then \(q=2\) then Holder ineqaulty becomes Cauchy -Schawrz inequlity.
 \end{remark}
+
+\begin{theorem}[Minkowski's Inequality]
+\protect\hypertarget{thm:mink}{}\label{thm:mink}Fix \(1 \le p \le \infty\). Let \(f,g : X \to \mathbb{C}\) be measurable functions. Then
+\[
+\|f + g\|_{p} \le \|f\|_{p} + \|g\|_{p}.
+\]
+\end{theorem}
+
+\begin{proof}
+\pandocbounded{\includegraphics[keepaspectratio]{fig/mikwoski-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{fig/mikwoski-2.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{fig/mikwoski-3.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{fig/mikwoski-4.png}}
+\end{proof}
+
+Next, we consider the following question:
+
+\textbf{Question} : For which measurable functions \(f : X \to \mathbb{C}\) do we have \(\|f\|_{p} = 0\)?
+
+\textbf{Answer}: By lemma @ref(lemm:lemma1.1.1) \(||f||_p=0 \iff f=0 ~[\mu] -\) a.e. Precisely those functions such that \(f(x) = 0\) for \(\mu\)-almost every \(x \in X\).
+
+In particular, there are some functions \(f\) which are not identically zero but have zero \(\mathcal{L}^{p}\)-norm. This is unfortunate, so we typically consider the following quotient space:
+
+We define
+
+\[
+{L}^{p}(X,\mathcal{T},\mu)
+    = \frac{\mathcal{L}^{p}(X,\mathcal{T},\mu)}{N_{p}},
+\]
+
+where
+
+\[
+N_{p}
+    = \{\, f \in \mathcal{L}^{p}(X,\mathcal{T},\mu) : \|f\|_{p} = 0 \,\}.
+\]
+
+We have seen that for any \(\lambda \in \mathbb{C}\) and any
+\(f, g \in \mathcal{L}^{p}(X,\mathcal{T},\mu)\), we always have
+
+\begin{align*}
+\|\lambda f\|_{p} &= |\lambda|\,\|f\|_{p},\\
+\|f + g\|_{p} &\le \|f\|_{p} + \|g\|_{p}.\\
+& \uparrow\\
+&\text{ By Mink}\\
+\end{align*}
+
+\textbf{Claim}: \(\mathcal{L}^p\) is vector space over \(\mathbb{C}\).
+
+\begin{proof}
+\leavevmode
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Zero function
+\end{enumerate}
+
+Let \(0(x) := 0\) for all \(x\). Then \(|0|^p = 0\) and \(\int_X |0|^p\,d\mu = 0 < \infty,\) so \(0 \in \mathcal{L}^p\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Closed under scalar multiplication
+\end{enumerate}
+
+Let \(f \in \mathcal{L}^p\) and \(\lambda \in \mathbb{C}\). Then
+\[
+|\lambda f|^p = |\lambda|^p |f|^p,
+\]
+so
+\[
+\int_X |\lambda f|^p\,d\mu
+= |\lambda|^p \int_X |f|^p\,d\mu < \infty.
+\]
+Thus \(\lambda f \in \mathcal{L}^p\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Closed under addition
+\end{enumerate}
+
+Let \(f,g \in \mathcal{L}^p\). Use the standard inequality for \(p \ge 1\):
+\[
+|f+g|^p \le 2^{p-1}\big(|f|^p + |g|^p\big).
+\]
+Integrate:
+\[
+\int_X |f+g|^p\,d\mu
+\le 2^{p-1} \left( \int_X |f|^p\,d\mu + \int_X |g|^p\,d\mu \right)
+< \infty,
+\]
+since both integrals on the right are finite. Hence \(f+g \in \mathcal{L}^p\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Vector space axioms
+\end{enumerate}
+
+The pointwise operations
+\[
+(f+g)(x) := f(x)+g(x), \quad (\lambda f)(x) := \lambda f(x)
+\]
+inherit associativity, commutativity, distributivity, etc., from \(\mathbb{C}\). Together with steps 1--3, this shows \(\mathcal{L}^p(X,\mathcal{T},\mu)\) is a vector space over \(\mathbb{C}\).
+
+Then
+\[
+L^{p}(X,\mathcal{T},\mu)
+= \frac{\mathcal{L}^{p}(X,\mathcal{T},\mu)}{N_{p}}
+\]
+is the quotient of this vector space by the subspace \(N_p\), so it is also a vector space.
+
+\end{proof}
+
+\textbf{Claim}: \(N^p\) is subspace of \(\mathcal{L}^p\)
+
+\begin{proof}
+Let \(f,g\in N^p\) and \(\lambda\in \mathbb{C}\),
+
+\begin{itemize}
+\tightlist
+\item
+  \(0_{map}\in N^p\implies N^p \neq \emptyset\)
+\item
+  \(\|\lambda f\|_{p} = |\lambda|\,\|f\|_{p}=0\)
+\item
+  \(\|f + g\|_{p} \le \|f\|_{p} + \|g\|_{p}=0 \implies \|f + g\|_{p}=0.\)
+\end{itemize}
+
+Thus, \(N^p\) is a subspace of \(\mathcal{L}^p\).
+\end{proof}
+
+Thus, \(L^p\) is subspace. Hence, \(N_{p}\) is a subspace of \(L^{p}(X,\mathcal{T},\mu)\); therefore
+\(L^{p}(X,\mathcal{T},\mu)\) is a vector space over \(\mathbb{C}\).
+
+If for \(f \in L^{p}(X,\mathcal{T},\mu)\) we denote by \([f]\) its image
+in the quotient space \(L^{p}(X,\mathcal{T},\mu)\), then
+
+\[
+\lambda [f] + [g] = [\,\lambda f + g\,].
+\]
+
+Define
+\[\|[f]\|_p=\|f\|_p\]
+More ever, \(\|[\cdot]\|_p\) well defined.
+
+\begin{proof}
+Let \(f,g\in \mathcal{L}^p\)
+By Minkowski's inequlirty we can get,
+
+\begin{equation}
+\bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
+    \;\le\;
+    \|\,f - g\,\|_{p},
+    \qquad f,g \in L^{p}(X,\mathcal{T},\mu).
+\end{equation}
+
+Suppos that \([f]=[g]\).
+Then, \(f-g\in N^p\implies f-g\in N^p\). Then \(\|\,f - g\,\|_{p}=0\). Thus,
+
+\begin{align*}\bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
+    \;\le\;
+    \|\,f - g\,\|_{p}=0 
+    & \implies \|[f-g] \|_p=0\\ 
+    &\implies \bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|=0\\
+    &\implies \,\|f\|_{p} = \|g\|_{p}
+\end{align*}
+\end{proof}
+
+Note that \(\|[f]\|_p = 0\) if and only \([f] = 0_{L^p}\) in \(L^p(X,I,\mu)\).
+
+\begin{proof}
+\leavevmode
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbf{\implies}\) :\\
+  \begin{align*}  
+  \|[f]\|_p = 0 &\implies \|f\|_p = 0.\\
+  &\implies f\in N^p \\
+  & \implies [f] = [0] = 0_{L^p}\\
+  \end{align*}
+\item
+  \(\mathbf{\Longleftarrow}\) :
+  \begin{align*}
+   [f]=0_{L^p} & \implies [f]=[0]\\
+  & \implies f-0\in N^p\\
+  & \implies f\in N^p \\
+  & \implies \|f\|_p=0\\
+  & \implies \|[f]\|_p = \|f\|_p = 0.
+  \end{align*}
+\end{itemize}
+
+\end{proof}
+
+Now we can avoid the problem that have earlier. Now we can defnie the norm.
+
+Here's a clean, well‑structured Markdown version of your text, with mathematical expressions formatted clearly and consistently.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\section{A point of notation}\label{a-point-of-notation}
+
+For convenience, mathematicians agree to write \(f\) instead of \([f]\). This causes very little confusion; the only thing to keep in mind is that one can capture the behaviour of an element in \(L^p(X,\mathcal{T},\mu)\) only up to sets of zero \(\mu\)-measure. For the rest of this course, we will use this convention and write elements of the quotient space \(L^p\) simply as functions.
+
+\subsection{Summary}\label{summary}
+
+For \(1 \le p \le \infty\):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Vector space:} \(L^p(X,\mathcal{T},\mu)\) is a vector space over \(\mathbb{C}\).
+\item
+  \textbf{Definition of the \(p\)-norm:} To every \(f \in L^p(X,\mathcal{T},\mu)\) we associate a non‑negative number defined by\\
+  \[
+  \|f\|_p = \left( \int_X |f|^p \, d\mu \right)^{1/p}, \qquad 1 \le p < \infty,
+  \]
+  and for \(p = \infty\),
+  \[
+  \|f\|_\infty = \inf\{ M \ge 0 : |f(x)| \le M \text{ for almost every } x \}.
+  \]
+\item
+  \textbf{Homogeneity:} For every \(\lambda \in \mathbb{C}\) and \(f \in L^p(X,\mathcal{T},\mu)\),
+  \[
+  \|\lambda f\|_p = |\lambda|\, \|f\|_p.
+  \]
+\item
+  \textbf{Triangle inequality:} For every \(f,g \in L^p(X,\mathcal{T},\mu)\),
+  \[
+  \|f + g\|_p \le \|f\|_p + \|g\|_p.
+  \]
+\item
+  \textbf{Definiteness:} For every \(f \in L^p(X,\mathcal{T},\mu)\),
+  \[
+  \|f\|_p \ge 0,
+  \]
+  with equality if and only if \(f = 0\) almost everywhere.
+\end{enumerate}
+
+Properties (iii), (iv), and (v) show that \(\|\cdot\|_p\) defines a norm, so \(L^p(X,\mathcal{I},\mu)\) is a \textbf{normed linear space}.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-16}{}\label{def:unnamed-chunk-16}\textbf{Banach spaces} are normed linear spaces with an additional property: they are \emph{complete}, meaning every Cauchy sequence converges.
+\end{definition}
+
+Our next task is to show that \(L^p(X,\mathcal{I},\mu)\) is a Bannch space. (We need to show that complete space)
+
+Before doing so, we recall some important results from measure theory.
+
+\begin{lemma}[Chebyshev’s Inequality]
+\protect\hypertarget{lem:unnamed-chunk-17}{}\label{lem:unnamed-chunk-17}Let \((X,\mathcal{T},\mu)\) be a measure space and let \(f\) be a non‑negative measurable function on \(X\).\\
+Then, for every \(\lambda > 0\),
+\[
+\mu\{x \in X : f(x) \ge \lambda\}
+\;\le\;
+\frac{1}{\lambda} \int_X f \, d\mu.
+\]
+\end{lemma}
+
+\begin{proof}
+Let \(E_\lambda=\{x \in X : f(x) \ge \lambda\}\), Then,
+\[
+\int_X f \,d\mu \geq \int_{E_\lambda} f \,d\mu  \ge \int_{E_\lambda} \lambda \,d\mu =\lambda \int_{E_\lambda}  \,d\mu =\lambda \mu(E_\lambda)
+\]
+\end{proof}
+
+\begin{lemma}[Borel–Cantelli Lemma]
+\protect\hypertarget{lem:unnamed-chunk-19}{}\label{lem:unnamed-chunk-19}Let \((X,\mathcal{T},\mu)\) be a measure space and let \(\{E_n\}_{n=1}^\infty\) be a collection of measurable sets such that \(\sum_{n=1}^\infty \mu(E_n) < \infty.\)
+Then \(\mu\)-almost every \(x \in X\) belongs to at most finitely many of the sets \(E_n\).
+\end{lemma}
+
+\begin{proof}
+\begin{align*}
+S&:=\left\{x\in X: x \text{  belongs to infinitly many }E_n\right\}\\
+&=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k (I will explain this later)
+\end{align*}
+
+\begin{align*}
+\mu(S) &\le \mu \left(\cup_{k=N}^\infty\right)\\
+& \le \sum_{k=N}^\infty \mu(E_k) \text{ for all } N
+\end{align*}
+Then left hand side is goes to zero as \(N\to \infty\).
+
+\pandocbounded{\includegraphics[keepaspectratio]{fig/fig (11).png}}
+\end{proof}
+
+\begin{lemma}[Fatou’s Lemma]
+\protect\hypertarget{lem:unnamed-chunk-21}{}\label{lem:unnamed-chunk-21}Let \((X,\mathcal{T},\mu)\) be a measure space and let \(\{f_n\}_{n=1}^\infty\) be a sequence of non‑negative measurable functions on \(X\). Then,
+\[
+\int_X \liminf_{n\to\infty} f_n \, d\mu
+\;\le\;
+\liminf_{n\to\infty} \int_X f_n \, d\mu.
+\]
+\end{lemma}
+
+\begin{lemma}[A Technical Convergence Lemma]
+\protect\hypertarget{lem:unnamed-chunk-22}{}\label{lem:unnamed-chunk-22}
+
+Let \((X,\mathcal{T},\mu)\) be a measure space and let \(1 \le p \le \infty\).\\
+Let \(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\) be a sequence such that there exists a sequence of positive numbers \(\{\varepsilon_n\}_{n=1}^\infty\) with
+\[
+\sum_{n=1}^\infty \varepsilon_n < \infty,
+\]
+and
+\[
+\|f_n - f_{n+1}\|_p \le \varepsilon_n^2, \qquad n \ge 1.
+\]
+
+Then there exists \(f \in L^p(X,\mathcal{T},\mu)\) such that
+
+\begin{itemize}
+\item
+  pointwise a.e. convergence:
+  \[
+  \lim_{n\to\infty} f_n(x) = f(x) \quad \text{for } \mu\text{-almost every } x \in X,
+  \]
+\item
+  convergence in \(L^p\):
+  \[
+  \lim_{n\to\infty} \|f - f_n\|_p = 0.
+  \]
+\end{itemize}
+
+\end{lemma}
 
 \chapter{Hello bookdown}\label{hello-bookdown}
 

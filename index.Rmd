@@ -316,16 +316,221 @@ More ever, \(\|[\cdot]\|_p\) well defined.
 Let $f,g\in \mathcal{L}^p$
 By Minkowski's inequlirty we can get,
 
-\[
+\begin{equation}
 \bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
     \;\le\;
     \|\,f - g\,\|_{p},
     \qquad f,g \in L^{p}(X,\mathcal{T},\mu).
-\]
+\end{equation}
 
 Suppos that $[f]=[g]$.
-Then, $f-g\in N^p\implies f-g\in N^p$. Then $$
+Then, $f-g\in N^p\implies f-g\in N^p$. Then $\|\,f - g\,\|_{p}=0$. Thus,
 
+\begin{align*}\bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
+    \;\le\;
+    \|\,f - g\,\|_{p}=0 
+    & \implies \|[f-g] \|_p=0\\ 
+    &\implies \bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|=0\\
+    &\implies \,\|f\|_{p} = \|g\|_{p}
+\end{align*}
 
 ```
 
+Note that $\|[f]\|_p = 0$ if and only $[f] = 0_{L^p}$ in $L^p(X,I,\mu)$.
+
+```{proof}
+
+- $\mathbf{\implies}$ :   
+\begin{align*}  
+\|[f]\|_p = 0 &\implies \|f\|_p = 0.\\
+&\implies f\in N^p \\
+& \implies [f] = [0] = 0_{L^p}\\
+\end{align*}
+- $\mathbf{\Longleftarrow}$ :
+\begin{align*}
+ [f]=0_{L^p} & \implies [f]=[0]\\
+& \implies f-0\in N^p\\
+& \implies f\in N^p \\
+& \implies \|f\|_p=0\\
+& \implies \|[f]\|_p = \|f\|_p = 0.
+\end{align*}
+```
+
+Now we can avoid the problem that have earlier. Now we can defnie the norm.
+
+Here’s a clean, well‑structured Markdown version of your text, with mathematical expressions formatted clearly and consistently.
+
+---
+
+## A point of notation
+
+For convenience, mathematicians agree to write \( f \) instead of \([f]\). This causes very little confusion; the only thing to keep in mind is that one can capture the behaviour of an element in \(L^p(X,\mathcal{T},\mu)\) only up to sets of zero \(\mu\)-measure. For the rest of this course, we will use this convention and write elements of the quotient space \(L^p\) simply as functions.
+
+### Summary 
+
+For \(1 \le p \le \infty\):
+
+1. **Vector space:**   \(L^p(X,\mathcal{T},\mu)\) is a vector space over \(\mathbb{C}\).
+
+2. **Definition of the \(p\)-norm:** To every \(f \in L^p(X,\mathcal{T},\mu)\) we associate a non‑negative number defined by  
+   \[
+   \|f\|_p = \left( \int_X |f|^p \, d\mu \right)^{1/p}, \qquad 1 \le p < \infty,
+   \]
+   and for \(p = \infty\),
+   \[
+   \|f\|_\infty = \inf\{ M \ge 0 : |f(x)| \le M \text{ for almost every } x \}.
+   \]
+
+3. **Homogeneity:** For every \(\lambda \in \mathbb{C}\) and \(f \in L^p(X,\mathcal{T},\mu)\),
+   \[
+   \|\lambda f\|_p = |\lambda|\, \|f\|_p.
+   \]
+
+4. **Triangle inequality:** For every \(f,g \in L^p(X,\mathcal{T},\mu)\),
+   \[
+   \|f + g\|_p \le \|f\|_p + \|g\|_p.
+   \]
+
+5. **Definiteness:** For every \(f \in L^p(X,\mathcal{T},\mu)\),
+   \[
+   \|f\|_p \ge 0,
+   \]
+   with equality if and only if \(f = 0\) almost everywhere.
+
+
+
+
+Properties (iii), (iv), and (v) show that \(\|\cdot\|_p\) defines a norm, so \(L^p(X,\mathcal{I},\mu)\) is a **normed linear space**.
+
+```{definition}
+**Banach spaces** are normed linear spaces with an additional property: they are *complete*, meaning every Cauchy sequence converges. 
+```
+Our next task is to show that \(L^p(X,\mathcal{I},\mu)\) is a Bannch space. (We need to show that complete space)
+
+
+Before doing so, we recall some important results from measure theory.
+
+```{lemma,name="Chebyshev’s Inequality"}
+
+Let \((X,\mathcal{T},\mu)\) be a measure space and let \(f\) be a non‑negative measurable function on \(X\).  
+Then, for every \(\lambda > 0\),
+\[
+\mu\{x \in X : f(x) \ge \lambda\}
+\;\le\;
+\frac{1}{\lambda} \int_X f \, d\mu.
+\]
+
+```
+
+```{proof}
+Let $E_\lambda=\{x \in X : f(x) \ge \lambda\}$, Then,
+\[
+\int_X f \,d\mu \geq \int_{E_\lambda} f \,d\mu  \ge \int_{E_\lambda} \lambda \,d\mu =\lambda \int_{E_\lambda}  \,d\mu =\lambda \mu(E_\lambda)
+\]
+```
+
+```{lemma,name="Borel–Cantelli Lemma"}
+
+Let \((X,\mathcal{T},\mu)\) be a measure space and let \(\{E_n\}_{n=1}^\infty\) be a collection of measurable sets such that \(
+\sum_{n=1}^\infty \mu(E_n) < \infty.
+\)
+Then \(\mu\)-almost every \(x \in X\) belongs to at most finitely many of the sets \(E_n\).
+
+```
+
+```{proof}
+\begin{align*}
+S&:=\left\{x\in X: x \text{  belongs to infinitly many }E_n\right\}\\
+&=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k (See latter picture.)
+\end{align*}
+
+
+\begin{align*}
+\mu(S) &\le \mu \left(\cup_{k=N}^\infty\right)\\
+& \le \sum_{k=N}^\infty \mu(E_k) \text{ for all } N
+\end{align*}
+Then left hand side is goes to zero as $N\to \infty$.
+
+![](fig/fig (12).png){width=50%}
+```
+
+```{lemma,name="Fatou’s Lemma"}
+
+Let \((X,\mathcal{T},\mu)\) be a measure space and let \(\{f_n\}_{n=1}^\infty\) be a sequence of non‑negative measurable functions on \(X\). Then,
+\[
+\int_X \liminf_{n\to\infty} f_n \, d\mu
+\;\le\;
+\liminf_{n\to\infty} \int_X f_n \, d\mu.
+\]
+
+```
+
+
+
+```{lemma}
+Let \((X,\mathcal{T},\mu)\) be a measure space and let \(1 \le p \le \infty\). Let \(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\) be a sequence such that there exists a sequence of positive numbers \(\{\varepsilon_n\}_{n=1}^\infty\) with \[\sum_{n=1}^\infty \varepsilon_n < \infty, \text{ and } 
+\|f_n - f_{n+1}\|_p \le \varepsilon_n^2, \qquad n \ge 1.
+\]
+
+Then there exists \(f \in L^p(X,\mathcal{T},\mu)\) such that
+
+- pointwise a.e. convergence:
+  \[
+  \lim_{n\to\infty} f_n(x) = f(x) \quad \text{for } \mu\text{-almost every } x \in X,
+  \]
+
+- convergence in \(L^p\):
+  \[
+  \lim_{n\to\infty} \|f - f_n\|_p = 0.
+  \]
+
+```
+
+```{proof}
+- \textbf{Claim 1}: $(f_n)$ is cauchy.
+
+  For $n,m \ge 1$, consider follwing
+  \begin{align*}
+\| f_n-f_{n+m}\| 
+&=\|f_n-f_{n+1}+f_{n+1}+\cdots +f_{n+m-1}-f_{n+m}\|\\
+&=\|f_n-f_{n+1}\|+\|f_{n+1}-f_{n+2}\|+\cdots +\|f_{n+m-1}-f_{n+m}\|\\
+&\ge \sum_{k=n}^{n+m-1} \|f_k-f_{k+1}\|\\
+& \ge \sum_{k=n}^{n+m-1} \epsilon_k^2
+\end{align*}
+Then left hand side is goes to zero as $n \to 0$.
+Thus, $(f_n)$ is cauchy.
+
+- \textbf{Claim 2}: 
+  - $p=\infty$: For $n,m \ge 1$ then we have  ,
+\[\|f_n(x) − f_m(x)\| \le \|f_n −f_m\|_\infty \text{ for }[µ]\text{ -almost every} x \in X. \]
+Hence, there is a measurable set \(E_{n,m} \subset X\) such that  \[\mu(X \setminus E_{n,m}) = 0 \text{ and } |f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
+\quad \text{for every } x \in E_{n,m}.
+\]
+
+
+
+Then the set \(E = \bigcap_{n,m} E_{n,m}\) is measurable and satisfies
+\(\mu(X \setminus E) = 0,\) and moreover,
+
+
+\[
+|f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
+\quad \text{for every } x \in E \text{ and every } n,m \in \mathbb{N}.
+\]
+
+
+
+Thus, for every \(x \in E\), the sequence \(\{f_n(x)\}_n \subset \mathbb{C}\) is Cauchy.  
+Since \(\mathbb{C}\) is complete, we may define a measurable function \(f : X \to \mathbb{C}\) by
+
+
+\[
+f(x) = \lim_{n \to \infty} f_n(x), \qquad x \in E.
+\]
+
+
+
+  - $p<\infty$
+```
+
+ 

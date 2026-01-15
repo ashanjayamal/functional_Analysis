@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan De Silva" />
 
 
-<meta name="date" content="2026-01-14" />
+<meta name="date" content="2026-01-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -82,6 +82,10 @@
 <ul>
 <li class="chapter" data-level="1.1.1" data-path="index.html"><a href="index.html#a"><i class="fa fa-check"></i><b>1.1.1</b> a</a></li>
 </ul></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#a-point-of-notation"><i class="fa fa-check"></i><b>1.2</b> A point of notation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#summary"><i class="fa fa-check"></i><b>1.2.1</b> Summary</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
 <ul>
@@ -137,7 +141,7 @@
 <div id="header">
 <h1 class="title">Functinal Analaysis</h1>
 <p class="author"><em>Ashan De Silva</em></p>
-<p class="date"><em>2026-01-14</em></p>
+<p class="date"><em>2026-01-15</em></p>
 </div>
 <div id="banach-space" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Banach space<a href="index.html#banach-space" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -381,14 +385,175 @@ More ever, <span class="math inline">\(\|[\cdot]\|_p\)</span> well defined.</p>
 <div class="proof">
 <p><span id="unlabeled-div-8" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(f,g\in \mathcal{L}^p\)</span>
 By Minkowski’s inequlirty we can get,</p>
-<p><span class="math display">\[
+<p><span class="math display">\[\begin{equation}
 \bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
     \;\le\;
     \|\,f - g\,\|_{p},
     \qquad f,g \in L^{p}(X,\mathcal{T},\mu).
-\]</span></p>
+\end{equation}\]</span></p>
 <p>Suppos that <span class="math inline">\([f]=[g]\)</span>.
-Then, <span class="math inline">\(f-g\in N^p\implies f-g\in N^p\)</span>. Then $$</p>
+Then, <span class="math inline">\(f-g\in N^p\implies f-g\in N^p\)</span>. Then <span class="math inline">\(\|\,f - g\,\|_{p}=0\)</span>. Thus,</p>
+<p><span class="math display">\[\begin{align*}\bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|
+    \;\le\;
+    \|\,f - g\,\|_{p}=0
+    &amp; \implies \|[f-g] \|_p=0\\
+    &amp;\implies \bigl|\,\|f\|_{p} - \|g\|_{p}\,\bigr|=0\\
+    &amp;\implies \,\|f\|_{p} = \|g\|_{p}
+\end{align*}\]</span></p>
+</div>
+<p>Note that <span class="math inline">\(\|[f]\|_p = 0\)</span> if and only <span class="math inline">\([f] = 0_{L^p}\)</span> in <span class="math inline">\(L^p(X,I,\mu)\)</span>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-9" class="proof"><em>Proof</em>. </span></p>
+<ul>
+<li><span class="math inline">\(\mathbf{\implies}\)</span> :<br />
+<span class="math display">\[\begin{align*}  
+\|[f]\|_p = 0 &amp;\implies \|f\|_p = 0.\\
+&amp;\implies f\in N^p \\
+&amp; \implies [f] = [0] = 0_{L^p}\\
+\end{align*}\]</span></li>
+<li><span class="math inline">\(\mathbf{\Longleftarrow}\)</span> :
+<span class="math display">\[\begin{align*}
+[f]=0_{L^p} &amp; \implies [f]=[0]\\
+&amp; \implies f-0\in N^p\\
+&amp; \implies f\in N^p \\
+&amp; \implies \|f\|_p=0\\
+&amp; \implies \|[f]\|_p = \|f\|_p = 0.
+\end{align*}\]</span></li>
+</ul>
+</div>
+<p>Now we can avoid the problem that have earlier. Now we can defnie the norm.</p>
+<p>Here’s a clean, well‑structured Markdown version of your text, with mathematical expressions formatted clearly and consistently.</p>
+<hr />
+</div>
+</div>
+<div id="a-point-of-notation" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> A point of notation<a href="index.html#a-point-of-notation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For convenience, mathematicians agree to write <span class="math inline">\(f\)</span> instead of <span class="math inline">\([f]\)</span>. This causes very little confusion; the only thing to keep in mind is that one can capture the behaviour of an element in <span class="math inline">\(L^p(X,\mathcal{T},\mu)\)</span> only up to sets of zero <span class="math inline">\(\mu\)</span>-measure. For the rest of this course, we will use this convention and write elements of the quotient space <span class="math inline">\(L^p\)</span> simply as functions.</p>
+<div id="summary" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Summary<a href="index.html#summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For <span class="math inline">\(1 \le p \le \infty\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Vector space:</strong> <span class="math inline">\(L^p(X,\mathcal{T},\mu)\)</span> is a vector space over <span class="math inline">\(\mathbb{C}\)</span>.</p></li>
+<li><p><strong>Definition of the <span class="math inline">\(p\)</span>-norm:</strong> To every <span class="math inline">\(f \in L^p(X,\mathcal{T},\mu)\)</span> we associate a non‑negative number defined by<br />
+<span class="math display">\[
+\|f\|_p = \left( \int_X |f|^p \, d\mu \right)^{1/p}, \qquad 1 \le p &lt; \infty,
+\]</span>
+and for <span class="math inline">\(p = \infty\)</span>,
+<span class="math display">\[
+\|f\|_\infty = \inf\{ M \ge 0 : |f(x)| \le M \text{ for almost every } x \}.
+\]</span></p></li>
+<li><p><strong>Homogeneity:</strong> For every <span class="math inline">\(\lambda \in \mathbb{C}\)</span> and <span class="math inline">\(f \in L^p(X,\mathcal{T},\mu)\)</span>,
+<span class="math display">\[
+\|\lambda f\|_p = |\lambda|\, \|f\|_p.
+\]</span></p></li>
+<li><p><strong>Triangle inequality:</strong> For every <span class="math inline">\(f,g \in L^p(X,\mathcal{T},\mu)\)</span>,
+<span class="math display">\[
+\|f + g\|_p \le \|f\|_p + \|g\|_p.
+\]</span></p></li>
+<li><p><strong>Definiteness:</strong> For every <span class="math inline">\(f \in L^p(X,\mathcal{T},\mu)\)</span>,
+<span class="math display">\[
+\|f\|_p \ge 0,
+\]</span>
+with equality if and only if <span class="math inline">\(f = 0\)</span> almost everywhere.</p></li>
+</ol>
+<p>Properties (iii), (iv), and (v) show that <span class="math inline">\(\|\cdot\|_p\)</span> defines a norm, so <span class="math inline">\(L^p(X,\mathcal{I},\mu)\)</span> is a <strong>normed linear space</strong>.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-16" class="definition"><strong>Definition 1.4  </strong></span><strong>Banach spaces</strong> are normed linear spaces with an additional property: they are <em>complete</em>, meaning every Cauchy sequence converges.</p>
+</div>
+<p>Our next task is to show that <span class="math inline">\(L^p(X,\mathcal{I},\mu)\)</span> is a Bannch space. (We need to show that complete space)</p>
+<p>Before doing so, we recall some important results from measure theory.</p>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-17" class="lemma"><strong>Lemma 1.3  (Chebyshev’s Inequality) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(f\)</span> be a non‑negative measurable function on <span class="math inline">\(X\)</span>.<br />
+Then, for every <span class="math inline">\(\lambda &gt; 0\)</span>,
+<span class="math display">\[
+\mu\{x \in X : f(x) \ge \lambda\}
+\;\le\;
+\frac{1}{\lambda} \int_X f \, d\mu.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-10" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(E_\lambda=\{x \in X : f(x) \ge \lambda\}\)</span>, Then,
+<span class="math display">\[
+\int_X f \,d\mu \geq \int_{E_\lambda} f \,d\mu  \ge \int_{E_\lambda} \lambda \,d\mu =\lambda \int_{E_\lambda}  \,d\mu =\lambda \mu(E_\lambda)
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-19" class="lemma"><strong>Lemma 1.4  (Borel–Cantelli Lemma) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(\{E_n\}_{n=1}^\infty\)</span> be a collection of measurable sets such that <span class="math inline">\(\sum_{n=1}^\infty \mu(E_n) &lt; \infty.\)</span>
+Then <span class="math inline">\(\mu\)</span>-almost every <span class="math inline">\(x \in X\)</span> belongs to at most finitely many of the sets <span class="math inline">\(E_n\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span><span class="math display">\[\begin{align*}
+S&amp;:=\left\{x\in X: x \text{  belongs to infinitly many }E_n\right\}\\
+&amp;=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k (See latter picture.)
+\end{align*}\]</span></p>
+<p><span class="math display">\[\begin{align*}
+\mu(S) &amp;\le \mu \left(\cup_{k=N}^\infty\right)\\
+&amp; \le \sum_{k=N}^\infty \mu(E_k) \text{ for all } N
+\end{align*}\]</span>
+Then left hand side is goes to zero as <span class="math inline">\(N\to \infty\)</span>.</p>
+<p><img src="fig/fig%20(12).png" style="width:50.0%" /></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-21" class="lemma"><strong>Lemma 1.5  (Fatou’s Lemma) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(\{f_n\}_{n=1}^\infty\)</span> be a sequence of non‑negative measurable functions on <span class="math inline">\(X\)</span>. Then,
+<span class="math display">\[
+\int_X \liminf_{n\to\infty} f_n \, d\mu
+\;\le\;
+\liminf_{n\to\infty} \int_X f_n \, d\mu.
+\]</span></p>
+</div>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-22" class="lemma"><strong>Lemma 1.6  </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(1 \le p \le \infty\)</span>. Let <span class="math inline">\(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\)</span> be a sequence such that there exists a sequence of positive numbers <span class="math inline">\(\{\varepsilon_n\}_{n=1}^\infty\)</span> with <span class="math display">\[\sum_{n=1}^\infty \varepsilon_n &lt; \infty, \text{ and }
+\|f_n - f_{n+1}\|_p \le \varepsilon_n^2, \qquad n \ge 1.
+\]</span></p>
+<p>Then there exists <span class="math inline">\(f \in L^p(X,\mathcal{T},\mu)\)</span> such that</p>
+<ul>
+<li><p>pointwise a.e. convergence:
+<span class="math display">\[
+\lim_{n\to\infty} f_n(x) = f(x) \quad \text{for } \mu\text{-almost every } x \in X,
+\]</span></p></li>
+<li><p>convergence in <span class="math inline">\(L^p\)</span>:
+<span class="math display">\[
+\lim_{n\to\infty} \|f - f_n\|_p = 0.
+\]</span></p></li>
+</ul>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-12" class="proof"><em>Proof</em>. </span></p>
+<ul>
+<li><p>: <span class="math inline">\((f_n)\)</span> is cauchy.</p>
+<p>For <span class="math inline">\(n,m \ge 1\)</span>, consider follwing
+<span class="math display">\[\begin{align*}
+\| f_n-f_{n+m}\|
+&amp;=\|f_n-f_{n+1}+f_{n+1}+\cdots +f_{n+m-1}-f_{n+m}\|\\
+&amp;=\|f_n-f_{n+1}\|+\|f_{n+1}-f_{n+2}\|+\cdots +\|f_{n+m-1}-f_{n+m}\|\\
+&amp;\ge \sum_{k=n}^{n+m-1} \|f_k-f_{k+1}\|\\
+&amp; \ge \sum_{k=n}^{n+m-1} \epsilon_k^2
+\end{align*}\]</span>
+Then left hand side is goes to zero as <span class="math inline">\(n \to 0\)</span>.
+Thus, <span class="math inline">\((f_n)\)</span> is cauchy.</p></li>
+<li><p>:</p>
+<ul>
+<li><span class="math inline">\(p=\infty\)</span>: For <span class="math inline">\(n,m \ge 1\)</span> then we have ,
+<span class="math display">\[\|f_n(x) − f_m(x)\| \le \|f_n −f_m\|_\infty \text{ for }[µ]\text{ -almost every} x \in X. \]</span>
+Hence, there is a measurable set <span class="math inline">\(E_{n,m} \subset X\)</span> such that <span class="math display">\[\mu(X \setminus E_{n,m}) = 0 \text{ and } |f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
+\quad \text{for every } x \in E_{n,m}.
+\]</span></li>
+</ul></li>
+</ul>
+<p>Then the set <span class="math inline">\(E = \bigcap_{n,m} E_{n,m}\)</span> is measurable and satisfies
+<span class="math inline">\(\mu(X \setminus E) = 0,\)</span> and moreover,</p>
+<p><span class="math display">\[
+|f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
+\quad \text{for every } x \in E \text{ and every } n,m \in \mathbb{N}.
+\]</span></p>
+<p>Thus, for every <span class="math inline">\(x \in E\)</span>, the sequence <span class="math inline">\(\{f_n(x)\}_n \subset \mathbb{C}\)</span> is Cauchy.<br />
+Since <span class="math inline">\(\mathbb{C}\)</span> is complete, we may define a measurable function <span class="math inline">\(f : X \to \mathbb{C}\)</span> by</p>
+<p><span class="math display">\[
+f(x) = \lim_{n \to \infty} f_n(x), \qquad x \in E.
+\]</span></p>
+<ul>
+<li><span class="math inline">\(p&lt;\infty\)</span></li>
+</ul>
 </div>
 
 </div>
