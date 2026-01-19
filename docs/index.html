@@ -23,7 +23,7 @@
 <meta name="author" content="Ashan De Silva" />
 
 
-<meta name="date" content="2026-01-15" />
+<meta name="date" content="2026-01-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,71 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -86,6 +151,11 @@
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="index.html"><a href="index.html#summary"><i class="fa fa-check"></i><b>1.2.1</b> Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#banach-spaces-and-linear-operators"><i class="fa fa-check"></i><b>1.3</b> Banach spaces and linear operators</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#terminology"><i class="fa fa-check"></i><b>1.3.1</b> Terminology</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#linear-operators"><i class="fa fa-check"></i><b>1.3.2</b> Linear operators</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
 <ul>
@@ -100,23 +170,9 @@
 <li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
-<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
-<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
-<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
-<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
-<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
-</ul></li>
+<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a></li>
+<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a></li>
+<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -141,7 +197,7 @@
 <div id="header">
 <h1 class="title">Functinal Analaysis</h1>
 <p class="author"><em>Ashan De Silva</em></p>
-<p class="date"><em>2026-01-15</em></p>
+<p class="date"><em>2026-01-19</em></p>
 </div>
 <div id="banach-space" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> Banach space<a href="index.html#banach-space" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -210,7 +266,7 @@ disjoint measurable sets, then</p>
 In this section we use the term <strong>“norm.”</strong> Strictly speaking, we have not yet verified that the expressions introduced actually satisfy the axioms of a norm. That verification will come later. For now, we use the word “norm” informally, with the understanding that its legitimacy will be established in due course.</li>
 </ul>
 <div class="lemma">
-<p><span id="lem:lemma1.1.1" class="lemma"><strong>(#lem:lemma1.1.1) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space, let <span class="math inline">\(0 &lt; p &lt; \infty\)</span>, and let
+<p><span id="lem:lem111" class="lemma"><strong>Lemma 1.1  </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space, let <span class="math inline">\(0 &lt; p &lt; \infty\)</span>, and let
 <span class="math inline">\(f \in \mathcal{L}^{p}(X,\mathcal{T},\mu)\)</span>.
 Then</p>
 <p><span class="math display">\[
@@ -228,7 +284,7 @@ f(x) = 0 \ \text{for [\(\mu\)]-a.e. } x \in X.
 <p><span id="unlabeled-div-2" class="proof"><em>Proof</em>. </span><img src="fig/fig%20(5).png" /></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-6" class="lemma"><strong>Lemma 1.1  </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let
+<p><span id="lem:unnamed-chunk-6" class="lemma"><strong>Lemma 1.2  </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let
 <span class="math inline">\(f \in \mathcal{L}^{\infty}(X,\mathcal{T},\mu)\)</span>.
 Then, for
 <span class="math display">\[
@@ -252,7 +308,7 @@ Then, for
 </tbody>
 </table>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-7" class="lemma"><strong>Lemma 1.2  (Young's inequality) </strong></span>Let <span class="math inline">\(a,b \ge 0\)</span> and <span class="math inline">\(1 &lt; p &lt; \infty\)</span>. Let <span class="math inline">\(q\)</span> be the conjugate exponent, i.e.</p>
+<p><span id="lem:unnamed-chunk-7" class="lemma"><strong>Lemma 1.3  (Young's inequality) </strong></span>Let <span class="math inline">\(a,b \ge 0\)</span> and <span class="math inline">\(1 &lt; p &lt; \infty\)</span>. Let <span class="math inline">\(q\)</span> be the conjugate exponent, i.e.</p>
 <p><span class="math inline">\(\frac{1}{p} + \frac{1}{q} = 1.\)</span></p>
 <p>Then</p>
 <p><span class="math display">\[
@@ -293,7 +349,7 @@ ab \le \frac{a^{p}}{p} + \frac{b^{q}}{q}.
 </div>
 <p>Next, we consider the following question:</p>
 <p><strong>Question</strong> : For which measurable functions <span class="math inline">\(f : X \to \mathbb{C}\)</span> do we have <span class="math inline">\(\|f\|_{p} = 0\)</span>?</p>
-<p><strong>Answer</strong>: By lemma @ref(lemm:lemma1.1.1) <span class="math inline">\(||f||_p=0 \iff f=0 ~[\mu] -\)</span> a.e. Precisely those functions such that <span class="math inline">\(f(x) = 0\)</span> for <span class="math inline">\(\mu\)</span>-almost every <span class="math inline">\(x \in X\)</span>.</p>
+<p><strong>Answer</strong>: By lemma <a href="#lemm:lem111"><strong>??</strong></a> <span class="math inline">\(||f||_p=0 \iff f=0 ~[\mu] -\)</span> a.e. Precisely those functions such that <span class="math inline">\(f(x) = 0\)</span> for <span class="math inline">\(\mu\)</span>-almost every <span class="math inline">\(x \in X\)</span>.</p>
 <p>In particular, there are some functions <span class="math inline">\(f\)</span> which are not identically zero but have zero <span class="math inline">\(\mathcal{L}^{p}\)</span>-norm. This is unfortunate, so we typically consider the following quotient space:</p>
 <p>We define</p>
 <p><span class="math display">\[
@@ -463,7 +519,7 @@ with equality if and only if <span class="math inline">\(f = 0\)</span> almost e
 <p>Our next task is to show that <span class="math inline">\(L^p(X,\mathcal{I},\mu)\)</span> is a Bannch space. (We need to show that complete space)</p>
 <p>Before doing so, we recall some important results from measure theory.</p>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-17" class="lemma"><strong>Lemma 1.3  (Chebyshev’s Inequality) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(f\)</span> be a non‑negative measurable function on <span class="math inline">\(X\)</span>.<br />
+<p><span id="lem:unnamed-chunk-17" class="lemma"><strong>Lemma 1.4  (Chebyshev’s Inequality) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(f\)</span> be a non‑negative measurable function on <span class="math inline">\(X\)</span>.<br />
 Then, for every <span class="math inline">\(\lambda &gt; 0\)</span>,
 <span class="math display">\[
 \mu\{x \in X : f(x) \ge \lambda\}
@@ -478,23 +534,25 @@ Then, for every <span class="math inline">\(\lambda &gt; 0\)</span>,
 \]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-19" class="lemma"><strong>Lemma 1.4  (Borel–Cantelli Lemma) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(\{E_n\}_{n=1}^\infty\)</span> be a collection of measurable sets such that <span class="math inline">\(\sum_{n=1}^\infty \mu(E_n) &lt; \infty.\)</span>
+<p><span id="lem:unnamed-chunk-19" class="lemma"><strong>Lemma 1.5  (Borel–Cantelli Lemma) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(\{E_n\}_{n=1}^\infty\)</span> be a collection of measurable sets such that <span class="math inline">\(\sum_{n=1}^\infty \mu(E_n) &lt; \infty.\)</span>
 Then <span class="math inline">\(\mu\)</span>-almost every <span class="math inline">\(x \in X\)</span> belongs to at most finitely many of the sets <span class="math inline">\(E_n\)</span>.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span><span class="math display">\[\begin{align*}
 S&amp;:=\left\{x\in X: x \text{  belongs to infinitly many }E_n\right\}\\
-&amp;=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k (See latter picture.)
+&amp;=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k \text{ (See latter picture.)}
 \end{align*}\]</span></p>
-<p><span class="math display">\[\begin{align*}
+<span class="math display">\[\begin{align*}
 \mu(S) &amp;\le \mu \left(\cup_{k=N}^\infty\right)\\
 &amp; \le \sum_{k=N}^\infty \mu(E_k) \text{ for all } N
 \end{align*}\]</span>
-Then left hand side is goes to zero as <span class="math inline">\(N\to \infty\)</span>.</p>
-<p><img src="fig/fig%20(12).png" style="width:50.0%" /></p>
+Then left hand side is goes to zero as <span class="math inline">\(N\to \infty\)</span>.
+<center>
+<img src="fig/fig%20(12).png" style="width:50.0%" />
+</center>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-21" class="lemma"><strong>Lemma 1.5  (Fatou’s Lemma) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(\{f_n\}_{n=1}^\infty\)</span> be a sequence of non‑negative measurable functions on <span class="math inline">\(X\)</span>. Then,
+<p><span id="lem:unnamed-chunk-21" class="lemma"><strong>Lemma 1.6  (Fatou’s Lemma) </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(\{f_n\}_{n=1}^\infty\)</span> be a sequence of non‑negative measurable functions on <span class="math inline">\(X\)</span>. Then,
 <span class="math display">\[
 \int_X \liminf_{n\to\infty} f_n \, d\mu
 \;\le\;
@@ -502,7 +560,7 @@ Then left hand side is goes to zero as <span class="math inline">\(N\to \infty\)
 \]</span></p>
 </div>
 <div class="lemma">
-<p><span id="lem:unnamed-chunk-22" class="lemma"><strong>Lemma 1.6  </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(1 \le p \le \infty\)</span>. Let <span class="math inline">\(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\)</span> be a sequence such that there exists a sequence of positive numbers <span class="math inline">\(\{\varepsilon_n\}_{n=1}^\infty\)</span> with <span class="math display">\[\sum_{n=1}^\infty \varepsilon_n &lt; \infty, \text{ and }
+<p><span id="lem:lemm119" class="lemma"><strong>Lemma 1.7  </strong></span>Let <span class="math inline">\((X,\mathcal{T},\mu)\)</span> be a measure space and let <span class="math inline">\(1 \le p \le \infty\)</span>. Let <span class="math inline">\(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\)</span> be a sequence such that there exists a sequence of positive numbers <span class="math inline">\(\{\varepsilon_n\}_{n=1}^\infty\)</span> with <span class="math display">\[\sum_{n=1}^\infty \varepsilon_n &lt; \infty, \text{ and }
 \|f_n - f_{n+1}\|_p \le \varepsilon_n^2, \qquad n \ge 1.
 \]</span></p>
 <p>Then there exists <span class="math inline">\(f \in L^p(X,\mathcal{T},\mu)\)</span> such that</p>
@@ -535,13 +593,20 @@ Thus, <span class="math inline">\((f_n)\)</span> is cauchy.</p></li>
 <ul>
 <li><span class="math inline">\(p=\infty\)</span>: For <span class="math inline">\(n,m \ge 1\)</span> then we have ,
 <span class="math display">\[\|f_n(x) − f_m(x)\| \le \|f_n −f_m\|_\infty \text{ for }[µ]\text{ -almost every} x \in X. \]</span>
-Hence, there is a measurable set <span class="math inline">\(E_{n,m} \subset X\)</span> such that <span class="math display">\[\mu(X \setminus E_{n,m}) = 0 \text{ and } |f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
-\quad \text{for every } x \in E_{n,m}.
+Hence, there is a measurable set <span class="math inline">\(E_{n,m} \subset X\)</span> such that<br />
+<span class="math display">\[\mu(X \setminus E_{n,m}) = 0 \text{ and } |f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty \quad \text{for every } x \in E_{n,m}~(\text{ By lemma \@ref(lem:lem111))}.
 \]</span></li>
 </ul></li>
 </ul>
 <p>Then the set <span class="math inline">\(E = \bigcap_{n,m} E_{n,m}\)</span> is measurable and satisfies
-<span class="math inline">\(\mu(X \setminus E) = 0,\)</span> and moreover,</p>
+<span class="math display">\[
+\mu(X \setminus E)
+= \mu\!\left(X \setminus \bigcap_{n,m=1}^{\infty} E_{n,m}\right)
+= \mu\!\left(\bigcup_{n,m=1}^{\infty} (X \setminus E_{n,m})\right)
+\le \sum_{n,m=1}^{\infty} \mu(X \setminus E_{n,m})
+= 0.
+\]</span>
+and moreover,</p>
 <p><span class="math display">\[
 |f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
 \quad \text{for every } x \in E \text{ and every } n,m \in \mathbb{N}.
@@ -554,6 +619,127 @@ f(x) = \lim_{n \to \infty} f_n(x), \qquad x \in E.
 <ul>
 <li><span class="math inline">\(p&lt;\infty\)</span></li>
 </ul>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-23" class="theorem"><strong>Theorem 1.3  (Riesz–Fischer) </strong></span>Let <span class="math inline">\((X, \mathcal{T}, \mu)\)</span> be a measure space and let <span class="math inline">\(1 \le p \le \infty\)</span>.<br />
+Then the space <span class="math inline">\(L^{p}(X, \mathcal{T}, \mu)\)</span> is complete.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Let <span class="math inline">\(\{f_n\}_{n\in\mathbb{N}} \subset L^{p}(X,\mathcal{T},\mu)\)</span> be a Cauchy sequence.</p>
+<p><strong>Claim 1</strong>: There exist a subsequnce <span class="math inline">\(g_n\)</span> of <span class="math inline">\(f_n\)</span> such that <span class="math inline">\(\|g_n-g_{n+1}\|_p\le \frac{1}{4^n}\)</span> for all <span class="math inline">\(n\)</span>.
+Defnie</p>
+<ul>
+<li>Let <span class="math inline">\(\varepsilon = \tfrac{1}{4}\)</span>. Then there exists <span class="math inline">\(N_{1} \in \mathbb{N}\)</span> such that <span class="math inline">\(n, m \ge N_{1} \implies \lVert f_{n} - f_{m} \rVert_{p} \le \tfrac{1}{4}\)</span>.<br />
+Define <span class="math inline">\(\mathbf{g_{1} = f_{N_1}}\)</span>.</li>
+<li>Let <span class="math inline">\(\varepsilon = \tfrac{1}{4^2}\)</span>. Then there exists <span class="math inline">\(N_{2} \in \mathbb{N}\)</span> anḍ <span class="math inline">\(N_2 \geq N_1\)</span> such that <span class="math inline">\(n, m \ge N_{2} \implies \lVert f_{n} - f_{m} \rVert_{p} \le \tfrac{1}{4^2}\)</span>.<br />
+Define <span class="math inline">\(\mathbf{g_{2} = f_{N_2}}\)</span>.</li>
+</ul>
+<p><span class="math inline">\(~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots ~~~~~~~~~~~~ \ \vdots ~~~~~~~~~~~~ \ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots\)</span></p>
+<ul>
+<li><p>Let <span class="math inline">\(\varepsilon = \tfrac{1}{4^k}\)</span>. Then there exists <span class="math inline">\(N_{k} \in \mathbb{N}\)</span> and <span class="math inline">\(N_{k} \geq N_{k-1}\)</span> such that <span class="math inline">\(n, m \ge N_{k} \implies \lVert f_{n} - f_{m} \rVert_{p} \le \tfrac{1}{4^k}\)</span>.<br />
+Define <span class="math inline">\(\mathbf{g_{k} = f_{N_k}}\)</span>.<br />
+<span class="math inline">\(~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots ~~~~~~~~~~~~ \ \vdots ~~~~~~~~~~~~ \ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots\)</span>
+Then <span class="math inline">\(\|g_k-g_{k+1}\|=\|f_{N_k}-f_{N_{k+1}}\| \le \frac{1}{4^k}\)</span> for all <span class="math inline">\(k\)</span>, because <span class="math inline">\(N_k,N_{k+1}\ge N_k\)</span>.</p>
+<p>Then by lemma <a href="index.html#lem:lemm119">1.7</a>, there exist <span class="math inline">\(f\in L^p\)</span> such that
+<span class="math inline">\(\|g-g_n\|_p \to 0\)</span> and <span class="math inline">\(g_n(x)\to f [\mu]-\)</span> a.e on <span class="math inline">\(X\)</span>.
+(i.e.: <span class="math inline">\(\{g_n\}_n\)</span> converges to <span class="math inline">\(f\)</span> in the <span class="math inline">\(p\)</span>-norm.) But
+Cauchy sequences can have at most one cluster point, so that the original sequence <span class="math inline">\(\{f_n\}_n\)</span> must converge to <span class="math inline">\(f\)</span>.</p></li>
+</ul>
+<p>Therefore, we see that <span class="math inline">\(L^{p}(X,\mathcal{T},\mu)\)</span> is a Banach space (complete normed space)for <span class="math inline">\(1 \le p \le \infty\)</span>.
+You may notice a useful corollary of Lemma <a href="index.html#lem:lemm119">1.7</a> and the proof above: Every Cauchy sequence in <span class="math inline">\(L^{p}(X,\mathcal{T},\mu)\)</span> has a subsequence converging pointwise almost everywhere to some function in the space.</p>
+</div>
+</div>
+</div>
+<div id="banach-spaces-and-linear-operators" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Banach spaces and linear operators<a href="index.html#banach-spaces-and-linear-operators" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="terminology" class="section level3 hasAnchor" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Terminology<a href="index.html#terminology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let <span class="math inline">\(X\)</span> be a vector space over <span class="math inline">\(\mathbb{C}\)</span>.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-25" class="definition"><strong>Definition 1.5  (norm) </strong></span>A <strong>norm</strong> is a function <span class="math inline">\(\|\cdot\| : X \to [0,\infty)\)</span>
+with the following properties:</p>
+<ul>
+<li>If <span class="math inline">\(x \in X\)</span>, then <span class="math inline">\(\|x\| = 0\)</span> if and only if <span class="math inline">\(x = 0\)</span>.</li>
+<li>If <span class="math inline">\(x,y \in X\)</span>, then <span class="math inline">\(\|x+y\| \le \|x\| + \|y\|\)</span>.</li>
+<li>If <span class="math inline">\(x \in X\)</span> and <span class="math inline">\(\lambda \in \mathbb{C}\)</span>, then <span class="math inline">\(\|\lambda x\| = |\lambda|\,\|x\|\)</span>.</li>
+</ul>
+<p>The pair <span class="math inline">\((X,\|\cdot\|)\)</span> is a <strong>normed space</strong>.</p>
+</div>
+<p>It is easily verified that each normed space is a metric space, if we set
+<span class="math inline">\(d(x,y) = \|x - y\|.\)</span></p>
+<p>In particular, normed spaces are topological spaces, where the topology is induced by this metric. For instance, a sequence <span class="math inline">\(\{x_n\}_n \subset X\)</span> converges to <span class="math inline">\(x \in X\)</span> if and only if</p>
+<p><span class="math display">\[
+\lim_{n\to\infty} \|x - x_n\| = 0.
+\]</span></p>
+<p>It is useful to note that the function</p>
+<p><span class="math display">\[
+X \to [0,\infty), \qquad x \mapsto \|x\|
+\]</span></p>
+<p>is continuous, in view of the inequality</p>
+<p><span class="math display">\[
+\big|\,\|x\| - \|y\|\,\big| \le \|x - y\|, \qquad x,y \in X.
+\]</span></p>
+<p><strong>Norms are not necessarily unique</strong>.</p>
+<div class="definition">
+<p><span id="def:unnamed-chunk-26" class="definition"><strong>Definition 1.6  (Equivalent of norms) </strong></span>Given two norms <span class="math inline">\(\|\cdot\|_1\)</span> and <span class="math inline">\(\|\cdot\|_2\)</span> on <span class="math inline">\(X\)</span>, we say that they are equivalent if there are positive constants <span class="math inline">\(C_1, C_2\)</span> such that</p>
+<p><span class="math display">\[
+C_1 \|x\|_1 \le \|x\|_2 \le C_2 \|x\|_1, \qquad x \in X.
+\]</span></p>
+</div>
+</div>
+<div id="linear-operators" class="section level3 hasAnchor" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Linear operators<a href="index.html#linear-operators" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unnamed-chunk-27" class="definition"><strong>Definition 1.7  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two vector spaces. A linear operator is a mapping <span class="math inline">\(T : X \to Y\)</span> which preserves the linear structure, in other words</p>
+<p><span class="math display">\[
+T(\alpha x + y) = \alpha T x + T y, \qquad x,y \in X,\ \alpha \in \mathbb{C}.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-28" class="definition"><strong>Definition 1.8  (bounded Linear Opeartor) </strong></span>Suppose in addition that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are normed spaces, and let <span class="math inline">\(T : X \to Y\)</span> be a linear operator. We say that <span class="math inline">\(T\)</span> is bounded provided that there is a constant <span class="math inline">\(M \ge 0\)</span> satisfying</p>
+<p><span class="math display">\[
+\|Tx\| \le M \|x\|, \qquad \forall x \in X.
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unnamed-chunk-29" class="definition"><strong>Definition 1.9  </strong></span>The <strong>operator norm of <span class="math inline">\(T\)</span></strong> is the infimum of such constants <span class="math inline">\(M\)</span>, and is denoted by <span class="math inline">\(\|T\|\)</span>. i.e.:
+<span class="math display">\[\text{Operator norm of } T=||T||:=\inf\left\{M&gt;0:\|Tx\| \le M \|x\|, \qquad \forall x \in X \right\}\]</span></p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-14" class="remark"><em>Remark</em>. </span>We note that to check that a given operator <span class="math inline">\(T : X \to Y\)</span> is bounded, it suffices to check the condition</p>
+<p><span class="math display">\[
+\|Tx\| \le M \|x\|
+\]</span></p>
+<p>for every <span class="math inline">\(x \neq 0\)</span>, since <span class="math inline">\(T0 = 0\)</span> by linearity.</p>
+</div>
+<p><strong>Notation</strong>: <span class="math inline">\(B(X,Y)=\)</span> the collection of all bounded linear operators from <span class="math inline">\(X\)</span> to <span class="math inline">\(Y\)</span>.</p>
+<div class="lemma">
+<p><span id="lem:unnamed-chunk-31" class="lemma"><strong>Lemma 1.8  </strong></span>Let <span class="math inline">\(X, Y\)</span> be normed spaces and <span class="math inline">\(T \in B(X,Y)\)</span>. Then,</p>
+<p><span class="math display">\[
+\|Tx - Ty\| \le \|T\|\,\|x - y\|, \qquad x,y \in X.
+\]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-15" class="proof"><em>Proof</em>. </span>There is a sequence <span class="math inline">\(\{M_n\}_n\)</span> of positive constants such that</p>
+<p><span class="math display">\[
+\|Tx\| \le M_n \|x\|, \qquad x \in X,\ n \in \mathbb{N},
+\]</span></p>
+<p>and <span class="math inline">\(\lim_{n\to\infty} M_n = \|T\|\)</span>. Thus, we conclude that</p>
+<p><span class="math display">\[
+\|Tx\| \le \|T\|\,\|x\|, \qquad x \in X.
+\]</span></p>
+<p>The claim now follows by linearity:</p>
+<p><span class="math display">\[
+\|Tx - Ty\| = \|T(x - y)\| \le \|T\|\,\|x - y\|.
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-33" class="theorem"><strong>Theorem 1.4  </strong></span>Let <span class="math inline">\(X, Y\)</span> be normed spaces and <span class="math inline">\(T : X \to Y\)</span>. TFAE</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(T\)</span> is continuous.</li>
+<li><span class="math inline">\(T\)</span> is continuous at <span class="math inline">\(0\)</span>.</li>
+<li><span class="math inline">\(T \in B(X,Y) ~(T\)</span> is bounded)</li>
+</ol>
 </div>
 
 </div>

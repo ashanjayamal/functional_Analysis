@@ -118,7 +118,7 @@
 
 \title{Functinal Analaysis}
 \author{Ashan De Silva}
-\date{2026-01-15}
+\date{2026-01-19}
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -247,7 +247,7 @@ disjoint measurable sets, then
 \end{itemize}
 
 \begin{lemma}
-\protect\hypertarget{lem:lemma1.1.1}{}\label{lem:lemma1.1.1}Let \((X,\mathcal{T},\mu)\) be a measure space, let \(0 < p < \infty\), and let
+\protect\hypertarget{lem:lem111}{}\label{lem:lem111}Let \((X,\mathcal{T},\mu)\) be a measure space, let \(0 < p < \infty\), and let
 \(f \in \mathcal{L}^{p}(X,\mathcal{T},\mu)\).
 Then
 
@@ -349,7 +349,7 @@ Next, we consider the following question:
 
 \textbf{Question} : For which measurable functions \(f : X \to \mathbb{C}\) do we have \(\|f\|_{p} = 0\)?
 
-\textbf{Answer}: By lemma @ref(lemm:lemma1.1.1) \(||f||_p=0 \iff f=0 ~[\mu] -\) a.e. Precisely those functions such that \(f(x) = 0\) for \(\mu\)-almost every \(x \in X\).
+\textbf{Answer}: By lemma \ref{lemm:lem111} \(||f||_p=0 \iff f=0 ~[\mu] -\) a.e. Precisely those functions such that \(f(x) = 0\) for \(\mu\)-almost every \(x \in X\).
 
 In particular, there are some functions \(f\) which are not identically zero but have zero \(\mathcal{L}^{p}\)-norm. This is unfortunate, so we typically consider the following quotient space:
 
@@ -613,9 +613,10 @@ Then \(\mu\)-almost every \(x \in X\) belongs to at most finitely many of the se
 \end{lemma}
 
 \begin{proof}
+
 \begin{align*}
 S&:=\left\{x\in X: x \text{  belongs to infinitly many }E_n\right\}\\
-&=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k (I will explain this later)
+&=\bigcap_{N=1}^\infty \bigcup_{k=N}^\infty E_k \text{ (See latter picture.)}
 \end{align*}
 
 \begin{align*}
@@ -624,7 +625,8 @@ S&:=\left\{x\in X: x \text{  belongs to infinitly many }E_n\right\}\\
 \end{align*}
 Then left hand side is goes to zero as \(N\to \infty\).
 
-\pandocbounded{\includegraphics[keepaspectratio]{fig/fig (11).png}}
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{fig/fig (12).png}
+
 \end{proof}
 
 \begin{lemma}[Fatou’s Lemma]
@@ -636,16 +638,10 @@ Then left hand side is goes to zero as \(N\to \infty\).
 \]
 \end{lemma}
 
-\begin{lemma}[A Technical Convergence Lemma]
-\protect\hypertarget{lem:unnamed-chunk-22}{}\label{lem:unnamed-chunk-22}
+\begin{lemma}
+\protect\hypertarget{lem:lemm119}{}\label{lem:lemm119}
 
-Let \((X,\mathcal{T},\mu)\) be a measure space and let \(1 \le p \le \infty\).\\
-Let \(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\) be a sequence such that there exists a sequence of positive numbers \(\{\varepsilon_n\}_{n=1}^\infty\) with
-\[
-\sum_{n=1}^\infty \varepsilon_n < \infty,
-\]
-and
-\[
+Let \((X,\mathcal{T},\mu)\) be a measure space and let \(1 \le p \le \infty\). Let \(\{f_n\}_{n=1}^\infty \subset L^p(X,\mathcal{T},\mu)\) be a sequence such that there exists a sequence of positive numbers \(\{\varepsilon_n\}_{n=1}^\infty\) with \[\sum_{n=1}^\infty \varepsilon_n < \infty, \text{ and } 
 \|f_n - f_{n+1}\|_p \le \varepsilon_n^2, \qquad n \ge 1.
 \]
 
@@ -665,6 +661,242 @@ Then there exists \(f \in L^p(X,\mathcal{T},\mu)\) such that
 \end{itemize}
 
 \end{lemma}
+
+\begin{proof}
+\leavevmode
+
+\begin{itemize}
+\item
+  \textbf{Claim 1}: \((f_n)\) is cauchy.
+
+  For \(n,m \ge 1\), consider follwing
+  \begin{align*}
+  \| f_n-f_{n+m}\| 
+  &=\|f_n-f_{n+1}+f_{n+1}+\cdots +f_{n+m-1}-f_{n+m}\|\\
+  &=\|f_n-f_{n+1}\|+\|f_{n+1}-f_{n+2}\|+\cdots +\|f_{n+m-1}-f_{n+m}\|\\
+  &\ge \sum_{k=n}^{n+m-1} \|f_k-f_{k+1}\|\\
+  & \ge \sum_{k=n}^{n+m-1} \epsilon_k^2
+  \end{align*}
+  Then left hand side is goes to zero as \(n \to 0\).
+  Thus, \((f_n)\) is cauchy.
+\item
+  \textbf{Claim 2}:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(p=\infty\): For \(n,m \ge 1\) then we have ,
+    \[\|f_n(x) − f_m(x)\| \le \|f_n −f_m\|_\infty \text{ for }[µ]\text{ -almost every} x \in X. \]
+    Hence, there is a measurable set \(E_{n,m} \subset X\) such that\\
+    \[\mu(X \setminus E_{n,m}) = 0 \text{ and } |f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty \quad \text{for every } x \in E_{n,m}~(\text{ By lemma \\ref{lem:lem111})}.
+    \]
+  \end{itemize}
+\end{itemize}
+
+Then the set \(E = \bigcap_{n,m} E_{n,m}\) is measurable and satisfies
+\[
+\mu(X \setminus E)
+= \mu\!\left(X \setminus \bigcap_{n,m=1}^{\infty} E_{n,m}\right)
+= \mu\!\left(\bigcup_{n,m=1}^{\infty} (X \setminus E_{n,m})\right)
+\le \sum_{n,m=1}^{\infty} \mu(X \setminus E_{n,m})
+= 0.
+\]
+and moreover,
+
+\[
+|f_n(x) - f_m(x)| \le \|f_n - f_m\|_\infty
+\quad \text{for every } x \in E \text{ and every } n,m \in \mathbb{N}.
+\]
+
+Thus, for every \(x \in E\), the sequence \(\{f_n(x)\}_n \subset \mathbb{C}\) is Cauchy.\\
+Since \(\mathbb{C}\) is complete, we may define a measurable function \(f : X \to \mathbb{C}\) by
+
+\[
+f(x) = \lim_{n \to \infty} f_n(x), \qquad x \in E.
+\]
+
+\begin{itemize}
+\tightlist
+\item
+  \(p<\infty\)
+\end{itemize}
+
+\end{proof}
+
+\begin{theorem}[Riesz–Fischer]
+\protect\hypertarget{thm:unnamed-chunk-23}{}\label{thm:unnamed-chunk-23}Let \((X, \mathcal{T}, \mu)\) be a measure space and let \(1 \le p \le \infty\).\\
+Then the space \(L^{p}(X, \mathcal{T}, \mu)\) is complete.
+\end{theorem}
+
+\begin{proof}
+Let \(\{f_n\}_{n\in\mathbb{N}} \subset L^{p}(X,\mathcal{T},\mu)\) be a Cauchy sequence.
+
+\textbf{Claim 1}: There exist a subsequnce \(g_n\) of \(f_n\) such that \(\|g_n-g_{n+1}\|_p\le \frac{1}{4^n}\) for all \(n\).
+Defnie
+
+\begin{itemize}
+\tightlist
+\item
+  Let \(\varepsilon = \tfrac{1}{4}\). Then there exists \(N_{1} \in \mathbb{N}\) such that \(n, m \ge N_{1} \implies \lVert f_{n} - f_{m} \rVert_{p} \le \tfrac{1}{4}\).\\
+  Define \(\mathbf{g_{1} = f_{N_1}}\).
+\item
+  Let \(\varepsilon = \tfrac{1}{4^2}\). Then there exists \(N_{2} \in \mathbb{N}\) anḍ \(N_2 \geq N_1\) such that \(n, m \ge N_{2} \implies \lVert f_{n} - f_{m} \rVert_{p} \le \tfrac{1}{4^2}\).\\
+  Define \(\mathbf{g_{2} = f_{N_2}}\).
+\end{itemize}
+
+\(~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots ~~~~~~~~~~~~ \ \vdots ~~~~~~~~~~~~ \ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots\)
+
+\begin{itemize}
+\item
+  Let \(\varepsilon = \tfrac{1}{4^k}\). Then there exists \(N_{k} \in \mathbb{N}\) and \(N_{k} \geq N_{k-1}\) such that \(n, m \ge N_{k} \implies \lVert f_{n} - f_{m} \rVert_{p} \le \tfrac{1}{4^k}\).\\
+  Define \(\mathbf{g_{k} = f_{N_k}}\).\\
+  \(~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots ~~~~~~~~~~~~ \ \vdots ~~~~~~~~~~~~ \ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots~~~~~~~~~~~~ \vdots~~~~~~~~~~~~  \vdots\)
+  Then \(\|g_k-g_{k+1}\|=\|f_{N_k}-f_{N_{k+1}}\| \le \frac{1}{4^k}\) for all \(k\), because \(N_k,N_{k+1}\ge N_k\).
+
+  Then by lemma \ref{lem:lemm119}, there exist \(f\in L^p\) such that
+  \(\|g-g_n\|_p \to 0\) and \(g_n(x)\to f [\mu]-\) a.e on \(X\).
+  (i.e.: \(\{g_n\}_n\) converges to \(f\) in the \(p\)-norm.) But
+  Cauchy sequences can have at most one cluster point, so that the original sequence \(\{f_n\}_n\) must converge to \(f\).
+\end{itemize}
+
+Therefore, we see that \(L^{p}(X,\mathcal{T},\mu)\) is a Banach space (complete normed space)for \(1 \le p \le \infty\).
+You may notice a useful corollary of Lemma \ref{lem:lemm119} and the proof above: Every Cauchy sequence in \(L^{p}(X,\mathcal{T},\mu)\) has a subsequence converging pointwise almost everywhere to some function in the space.
+\end{proof}
+
+\section{Banach spaces and linear operators}\label{banach-spaces-and-linear-operators}
+
+\subsection{Terminology}\label{terminology}
+
+Let \(X\) be a vector space over \(\mathbb{C}\).
+
+\begin{definition}[norm]
+\protect\hypertarget{def:unnamed-chunk-25}{}\label{def:unnamed-chunk-25}A \textbf{norm} is a function \(\|\cdot\| : X \to [0,\infty)\)
+with the following properties:
+
+\begin{itemize}
+\tightlist
+\item
+  If \(x \in X\), then \(\|x\| = 0\) if and only if \(x = 0\).
+\item
+  If \(x,y \in X\), then \(\|x+y\| \le \|x\| + \|y\|\).
+\item
+  If \(x \in X\) and \(\lambda \in \mathbb{C}\), then \(\|\lambda x\| = |\lambda|\,\|x\|\).
+\end{itemize}
+
+The pair \((X,\|\cdot\|)\) is a \textbf{normed space}.
+\end{definition}
+
+It is easily verified that each normed space is a metric space, if we set
+\(d(x,y) = \|x - y\|.\)
+
+In particular, normed spaces are topological spaces, where the topology is induced by this metric. For instance, a sequence \(\{x_n\}_n \subset X\) converges to \(x \in X\) if and only if
+
+\[
+\lim_{n\to\infty} \|x - x_n\| = 0.
+\]
+
+It is useful to note that the function
+
+\[
+X \to [0,\infty), \qquad x \mapsto \|x\|
+\]
+
+is continuous, in view of the inequality
+
+\[
+\big|\,\|x\| - \|y\|\,\big| \le \|x - y\|, \qquad x,y \in X.
+\]
+
+\textbf{Norms are not necessarily unique}.
+
+\begin{definition}[Equivalent of norms]
+\protect\hypertarget{def:unnamed-chunk-26}{}\label{def:unnamed-chunk-26}Given two norms \(\|\cdot\|_1\) and \(\|\cdot\|_2\) on \(X\), we say that they are equivalent if there are positive constants \(C_1, C_2\) such that
+
+\[
+C_1 \|x\|_1 \le \|x\|_2 \le C_2 \|x\|_1, \qquad x \in X.
+\]
+\end{definition}
+
+\subsection{Linear operators}\label{linear-operators}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-27}{}\label{def:unnamed-chunk-27}Let \(X\) and \(Y\) be two vector spaces. A linear operator is a mapping \(T : X \to Y\) which preserves the linear structure, in other words
+
+\[
+T(\alpha x + y) = \alpha T x + T y, \qquad x,y \in X,\ \alpha \in \mathbb{C}.
+\]
+\end{definition}
+
+\begin{definition}[bounded Linear Opeartor]
+\protect\hypertarget{def:unnamed-chunk-28}{}\label{def:unnamed-chunk-28}Suppose in addition that \(X\) and \(Y\) are normed spaces, and let \(T : X \to Y\) be a linear operator. We say that \(T\) is bounded provided that there is a constant \(M \ge 0\) satisfying
+
+\[
+\|Tx\| \le M \|x\|, \qquad \forall x \in X.
+\]
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-29}{}\label{def:unnamed-chunk-29}The \textbf{operator norm of \(T\)} is the infimum of such constants \(M\), and is denoted by \(\|T\|\). i.e.:
+\[\text{Operator norm of } T=||T||:=\inf\left\{M>0:\|Tx\| \le M \|x\|, \qquad \forall x \in X \right\}\]
+\end{definition}
+
+\begin{remark}
+We note that to check that a given operator \(T : X \to Y\) is bounded, it suffices to check the condition
+
+\[
+\|Tx\| \le M \|x\|
+\]
+
+for every \(x \neq 0\), since \(T0 = 0\) by linearity.
+\end{remark}
+
+\textbf{Notation}: \(B(X,Y)=\) the collection of all bounded linear operators from \(X\) to \(Y\).
+
+\begin{lemma}
+\protect\hypertarget{lem:unnamed-chunk-31}{}\label{lem:unnamed-chunk-31}Let \(X, Y\) be normed spaces and \(T \in B(X,Y)\). Then,
+
+\[
+\|Tx - Ty\| \le \|T\|\,\|x - y\|, \qquad x,y \in X.
+\]
+\end{lemma}
+
+\begin{proof}
+There is a sequence \(\{M_n\}_n\) of positive constants such that
+
+\[
+\|Tx\| \le M_n \|x\|, \qquad x \in X,\ n \in \mathbb{N},
+\]
+
+and \(\lim_{n\to\infty} M_n = \|T\|\). Thus, we conclude that
+
+\[
+\|Tx\| \le \|T\|\,\|x\|, \qquad x \in X.
+\]
+
+The claim now follows by linearity:
+
+\[
+\|Tx - Ty\| = \|T(x - y)\| \le \|T\|\,\|x - y\|.
+\]
+\end{proof}
+
+\begin{theorem}
+\protect\hypertarget{thm:unnamed-chunk-33}{}\label{thm:unnamed-chunk-33}
+
+Let \(X, Y\) be normed spaces and \(T : X \to Y\). TFAE
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(T\) is continuous.
+\item
+  \(T\) is continuous at \(0\).
+\item
+  \(T \in B(X,Y) ~(T\) is bounded)
+\end{enumerate}
+
+\end{theorem}
 
 \chapter{Hello bookdown}\label{hello-bookdown}
 
@@ -768,87 +1000,10 @@ temperature & pressure\\
 
 \chapter{Parts}\label{parts}
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
-
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
-
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
-
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
-
 \chapter{Footnotes and citations}\label{footnotes-and-citations}
-
-\section{Footnotes}\label{footnotes}
-
-Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
-
-\section{Citations}\label{citations}
-
-Reference items in your bibliography file(s) using \texttt{@key}.
-
-For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
-Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
-
-The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
 
 \chapter{Blocks}\label{blocks}
 
-\section{Equations}\label{equations}
-
-Here is an equation.
-
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation}
-
-You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
-
-\section{Theorems and proofs}\label{theorems-and-proofs}
-
-Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
-
-\begin{theorem}
-\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
-and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
-\[a^2 + b^2 = c^2\]
-\end{theorem}
-
-Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
-
-\section{Callout blocks}\label{callout-blocks}
-
-The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
-
 \chapter{Sharing your book}\label{sharing-your-book}
-
-\section{Publishing}\label{publishing}
-
-HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
-
-\section{404 pages}\label{pages}
-
-By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
-
-\section{Metadata for sharing}\label{metadata-for-sharing}
-
-Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
-
-This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
-
-Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
-
-Read more about the features of this output format here:
-
-\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
-
-Or use:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
-\end{Highlighting}
-\end{Shaded}
-
 
 \end{document}
